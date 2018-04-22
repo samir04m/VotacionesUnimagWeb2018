@@ -38,8 +38,8 @@
 
         if (isset($_GET["action"])){
             if($_GET["action"] == "createOk"){
-            	$mensaje = ' Se a registrado un nuevo usuario! ';
-            	$color = 'cyan';
+            	$mensaje = ' Se ha registrado un nuevo usuario! ';
+            	$color = 'blue';
            	
 				$alerta = '<div class="card-panel '.$color.'">Notificacion : '.$mensaje.'</div>';
               	echo $alerta;
@@ -72,3 +72,15 @@
         }
     ?>	
 </div>
+
+
+<div id="modal-confirmarEliminacion" class="modal">
+    <div class="modal-content center-align">
+        <h5>Confirmar eliminación!!</h5><hr><br>
+       <h4> ¿Está seguro de eliminar a este usuario? </h4>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat">Cancelar</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-light btn red" id="btnEliminar">Si, eliminar</a>
+    </div>
+ </div>

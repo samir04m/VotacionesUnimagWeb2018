@@ -32,9 +32,9 @@
 
 	<script type="text/javascript" src="view/resources/js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="view/resources/js/materialize.js"></script>
-	<script type="text/javascript" src="view/resources/js/myScript.js"></script>
+	<script type="text/javascript" src="view/resources/js/scriptTemplate.js"></script>
 
-
+	
 </body>
 </html>
 

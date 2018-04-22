@@ -86,7 +86,7 @@ class MvcController{
 					<td>'.$respuesta[$indice]->getprograma_id().'</td>
 					<td>'.$respuesta[$indice]->getmesa_id().'</td>
 					<td><a href="index.php?action=editarUsuario&id='.$respuesta[$indice]->getcodigo().'" class="btn btn-floating"><i class="small material-icons">edit</i></a></td>
-					<td><a href="index.php?action=admin&idBorrar='.$respuesta[$indice]->getcodigo().'" class="btn red btn-floating"><i class="small material-icons">delete_forever</i></a></td>	
+					<td><a href="index.php?action=admin&idBorrar='.$respuesta[$indice]->getcodigo().'" class="btn red btn-floating btnDelete"><i class="small material-icons">delete_forever</i></a></td>	
 				  </tr>';
 		}
 	}
