@@ -15,6 +15,9 @@
 			else if ($rutasModel == "formUsuario"){
 				$module = "view/usuario/formulario.php";
 			}
+			else if ($rutasModel == "editarUsuario"){
+				$module = "view/usuario/editar.php";
+			}
 			else if ($rutasModel == "cerrarSesion"){
 				$module = "controller/SERVICES/serv_logout.php";
 			}

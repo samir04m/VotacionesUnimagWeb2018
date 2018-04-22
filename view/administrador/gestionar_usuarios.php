@@ -40,6 +40,20 @@
 				$alerta = '<div class="card-panel '.$color.'">Notificacion : '.$mensaje.'</div>';
               	echo $alerta;
             }
+            if($_GET["action"] == "updateError"){
+            	$mensaje = ' No se puede actualizar el usuario! ';
+            	$color = 'red';
+           	
+				$alerta = '<div class="card-panel '.$color.'">Notificacion : '.$mensaje.'</div>';
+              	echo $alerta;
+            }
+            if($_GET["action"] == "updateOk"){
+            	$mensaje = ' Se ha actualizado el usuario correctamente! ';
+            	$color = 'green';
+           	
+				$alerta = '<div class="card-panel '.$color.'">Notificacion : '.$mensaje.'</div>';
+              	echo $alerta;
+            }
         }
         if (isset($_GET["seBorro"])){
             if($_GET["seBorro"] == "true"){

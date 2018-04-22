@@ -52,6 +52,7 @@ class DataSource {
     }
 
     public function ejecutarActualizacion($sql="", $values=array()){
+        echo $sql;
 
         if($sql != ""){
 

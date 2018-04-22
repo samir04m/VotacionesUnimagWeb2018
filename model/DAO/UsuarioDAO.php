@@ -104,15 +104,17 @@ class UsuarioDAO {
 
     public function updateUsuario_UsuarioDAO(Usuario $usuario, $table){
         $data_source= new DataSource();
-        $sql = "UPDATE $table SET nombre1 = :nombre1, "
-                . " nombre2 = :nombre2, "
-                . " apellido1 = :apellido1, "
-                . " apellido2 = :apellido2, "
-                . " password = :password, "
-                . " rol_id = :rol_id, "
-                . " programa_id = :programa_id, "
-                . " mesa_id = :mesa_id, "
-                . " WHERE codigo = :codigo ";
+
+        $sql = "UPDATE $table SET nombre1= :nombre1, "
+                . " nombre2= :nombre2, "
+                . " apellido1= :apellido1, "
+                . " apellido2= :apellido2, "
+                . " password= :password, "
+                . " rol_id= :rol_id, "
+                . " mesa_id= :mesa_id, "
+                . " programa_id= :programa_id "
+                . " WHERE codigo= :codigo ";
+
         $resultado = $data_source->ejecutarActualizacion($sql, array(
                 ':codigo'=>$usuario->getcodigo(),
                 ':nombre1'=>$usuario->getnombre1(),
@@ -121,8 +123,8 @@ class UsuarioDAO {
                 ':apellido2'=>$usuario->getapellido2(),
                 ':password'=>$usuario->getpassword(),
                 ':rol_id'=>$usuario->getrol_id(),
-                ':programa_id'=>$usuario->getprograma_id(),
-                ':mesa_id'=>$usuario->getmesa_id()
+                ':mesa_id'=>$usuario->getmesa_id(),
+                ':programa_id'=>$usuario->getprograma_id()
             )
         );
         
