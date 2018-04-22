@@ -32,8 +32,103 @@ class DataSource {
 
 	}
 
+	public function ejecutarConsulta($sql="", $values=array()){
 
+        if($sql != ""){
 
+            $consulta=$this->conexion->prepare($sql);
+
+            $consulta->execute($values);
+
+            $tabla_datos = $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+            $this->conexion=null;
+
+            return $tabla_datos;
+
+        }else{
+            return 0;
+        }
+    }
+
+    public function ejecutarActualizacion($sql="", $values=array()){
+
+        if($sql != ""){
+
+            $consulta=$this->conexion->prepare($sql);
+
+            $consulta->execute($values);
+
+            $numero_tablas_afectadas = $consulta->rowCount();
+
+            $this->conexion=null;
+
+            return $numero_tablas_afectadas;
+
+        }else{
+
+            return 0;
+
+        }
+
+    }
+
+    public function insertar($sql="", $values=array()){
+
+        if($sql != ""){
+
+            $consulta=$this->conexion->prepare($sql);
+
+            $consulta->execute($values);
+
+            $numero_tablas_afectadas = $consulta->rowCount();
+
+            $this->conexion=null;
+
+            return $numero_tablas_afectadas;
+        }else{
+            return 0;
+        }
+    }
+
+     public function getRegistros($sql=""){
+
+        echo "<br> DataSource ".$sql;
+        
+        if($sql != ""){
+
+            $consulta=$this->conexion->prepare($sql);
+
+            $consulta->execute();
+
+            $registros = $consulta->fetchAll();
+
+            $this->conexion=null;
+
+            return $registros;
+        }else{
+            return 0;
+        }
+    }
+
+    public function eliminar($tabla, $nameRowId, $id){
+        $sql = "DELETE FROM $tabla WHERE $nameRowId = :id";
+    
+        echo "<br>eliminar en DataSource '".$sql."' donde el id=".$id;
+
+        $consulta = $this->conexion->prepare($sql);
+
+        $consulta->bindParam(":id", $id, PDO::PARAM_INT); //posible error
+
+        $consulta->execute();
+
+        $numero_tablas_afectadas = $consulta->rowCount();
+
+        $this->conexion=null;
+
+        return $numero_tablas_afectadas;
+
+    }
 
 
 }
