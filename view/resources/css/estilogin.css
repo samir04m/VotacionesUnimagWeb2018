@@ -1,0 +1,82 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../imagen/ei.png);
+	background-size: 25.3%;
+	background-attachment: fixed;
+}
+.contenido-Form{
+	width: 100%;
+	max-width: 500px;
+	margin:48px auto;
+	border-radius: 5px;
+	position: relative;
+
+}
+.contenido-Form .creacion{
+	top: 7px;
+	right: 7px;
+	width: 100px;
+	height: 30px;
+	font-size: 13px;
+	line-height: 25px;
+	text-align: center;
+	border-bottom: 2px solid #ff851b; 
+	position: absolute;
+	transition: all .5s ease;
+	cursor: pointer;
+}
+.contenido-Form .creacion span{
+	letter-spacing: 1px;
+}
+.contenido-Form .creacion:hover{
+	border-bottom: 2px solid #0075d9; 
+}
+.contenido-Form .formulario{
+	padding:20px; 
+	display: none;
+}
+.contenido-Form .formulario:nth-child(2){
+	display: block;
+}
+.contenido-Form h2{
+	margin: 0 0 20px 0;
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 1;
+}
+.contenido-Form input[type="text"],.contenido-Form input[type="password"],.contenido-Form input[type="email"]{
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 10px 15px;
+	border:none;
+	border-radius: 2px;
+	border-bottom:5px solid red; 
+	font-size: 14px;
+	font-weight: normal;
+	margin:0 0 20px 0; 
+	transition: all .5s ease;
+}
+.contenido-Form input[type="submit"]{
+	background:#ff851b;
+	color: #fff;
+	border:none;
+	width: 100%;
+	padding: 10px 0;
+	letter-spacing: 1px;
+	font-size: 16px;
+	cursor: pointer; 
+	transition: all .5s ease;
+}
+.contenido-Form input[type="submit"]:hover{
+	background: yellow;
+}
+.contenido-Form .recuperar-password{
+	color:#fff;
+	width: 100%;
+	padding: 15px 0;
+	text-align: center;
+}

@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+	background-color: grey;
+}
+p{
+	font-size: 40px;
+	font-family: Verdana;
+	text-align: center;
+	padding-top: 20px;
+}
+.contenedor{
+	border-radius: 5px;
+	padding-top: 30px;
+	position: relative;
+
+}
+.contenedor .cerrar{
+	top: 7px;
+	right: 7px;
+	width: 100px;
+	height: 30px;
+	font-size: 13px;
+	line-height: 25px;
+	text-align: center;
+	border-bottom: 2px solid #ff851b; 
+	position: absolute;
+	transition: all .5s ease;
+	cursor: pointer;
+}
+.contenedor .cerrar span{
+	letter-spacing: 1px;
+}
+.contenedor .cerrar:hover{
+	border-bottom: 2px solid #0075d9; 
+}
+.contenedor-t{
+	text-align:center;
+}
+
+img.uno{
+	width: 250px;
+	height: 250px;
+}
