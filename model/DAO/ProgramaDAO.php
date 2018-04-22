@@ -7,7 +7,7 @@ class ProgramaDAO {
 
     public function obtenerProgramas(){
         $data_source = new DataSource();
-        $data_table = $data_source->ejecutarConsulta("SELECT * FROM Programa");
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM programa");
         $programa=null;
         $programas=array();
         foreach($data_table as $indice=>$valor){

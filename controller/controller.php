@@ -65,7 +65,7 @@ class MvcController{
         $ArrayMesas = $dao->obtenerMesas();
 
         foreach ($ArrayMesas as $indice => $valor) {
-           	echo '<option value="'.$ArrayMesas[$indice]->getid().'">'.$ArrayMesas[$indice]->getid().'</option>';
+           	echo '<option value="'.$ArrayMesas[$indice]->getid().'"> Mesa Número'.$ArrayMesas[$indice]->getid().'</option>';
         }
     }
 
@@ -97,14 +97,14 @@ class MvcController{
 		require_once "MDB/mdbUsuario.php";
 
 		if (isset($_GET["idBorrar"])){
-			$datosController = $_GET["idBorrar"];
+			$idBorrar = $_GET["idBorrar"];
 			
 			$dao = new UsuarioDAO();
-	        $respuesta= $dao->deleteUsuario($datosController);
+	        $respuesta= $dao->deleteUsuario_UsuarioDAO('usuario', 'codigo',$idBorrar);
 
 	        echo "<br>enController respuesta ".$respuesta;
 
-			// $respuesta = Datos::borrarUsuarioModel($datosController, "usuario");
+			// $respuesta = Datos::borrarUsuarioModel($idBorrar, "usuario");
 
 			if ($respuesta != 0){
 				header("location: index.php?action=admin&seBorro=true");

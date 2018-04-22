@@ -6,7 +6,7 @@
 			if ($rutasModel == "login"){
 				$module = "view/login.php";
 			}
-			else if ($rutasModel == "admin" || $rutasModel == "ok" || $rutasModel == "updateOk" || $rutasModel == "updateError"){
+			else if ($rutasModel == "admin" || $rutasModel == "createOk" || $rutasModel == "updateOk" || $rutasModel == "updateError"){
 				$module = "view/administrador/gestionar_usuarios.php";
 			}
 			// else if ($rutasModel == "fallo"){

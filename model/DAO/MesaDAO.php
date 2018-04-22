@@ -7,7 +7,7 @@ class MesaDAO {
 
     public function obtenerMesas(){
         $data_source = new DataSource();
-        $data_table = $data_source->ejecutarConsulta("SELECT * FROM Mesa");
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM mesa");
         $mesa=null;
         $mesas=array();
         foreach($data_table as $indice=>$valor){

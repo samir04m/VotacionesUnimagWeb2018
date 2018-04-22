@@ -10,15 +10,16 @@
 		$nombre2 = $_POST['nombre2'];
 		$apellido1 = $_POST['apellido1'];
 		$apellido2 = $_POST['apellido2'];
+		$password = $_POST['password'];
 		$rol_id = $_POST['rol_id'];
 		$programa_id = $_POST['programa_id'];
 		$mesa_id = $_POST['mesa_id'];
 
-        $usuario = insertUsuario_MdbUsuario($codigo, $nombre1, $nombre2, $apellido1, $apellido2, $rol_id, $programa_id, $mesa_id);
+        $usuario = insertUsuario_mdbUsuario($codigo, $nombre1, $nombre2, $apellido1, $apellido2, $password, $rol_id, $programa_id, $mesa_id);
 
         if ($usuario != 0){
-        	// header("location: ../../index.php?action=ok");  
-        	header("location: index.php?action=ok");  
+        	header("location: ../../index.php?action=createOk");  
+
         }else{
         	echo $usuario;
         }

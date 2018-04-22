@@ -26,16 +26,16 @@
 	</div>
 </div>
 <div class="row center"> 
-	Crear un Nuevo Usuario <a href="index.php?action=formulario" class="btn waves-effect blue btn-floating waves-light"><i class="material-icons">add</i></a>
+	Crear un Nuevo Usuario <a href="index.php?action=formUsuario" class="btn waves-effect blue btn-floating waves-light"><i class="material-icons">add</i></a>
 </div>
 <div class="container">
 	
 	<?php
 
         if (isset($_GET["action"])){
-            if($_GET["action"] == "ok"){
-            	$mensaje = ' Se a registrado un nuevo usuarios! ';
-            	$color = 'teal';
+            if($_GET["action"] == "createOk"){
+            	$mensaje = ' Se a registrado un nuevo usuario! ';
+            	$color = 'cyan';
            	
 				$alerta = '<div class="card-panel '.$color.'">Notificacion : '.$mensaje.'</div>';
               	echo $alerta;

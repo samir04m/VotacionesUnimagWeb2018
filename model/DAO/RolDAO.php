@@ -7,7 +7,7 @@ class RolDAO {
 
 	public function obtenerRoles(){
         $data_source = new DataSource();
-        $data_table = $data_source->ejecutarConsulta("SELECT * FROM Rol");
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM rol WHERE id != 'A' ORDER BY id DESC");
         $rol=null;
         $roles=array();
         foreach($data_table as $indice=>$valor){
