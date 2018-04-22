@@ -9,7 +9,7 @@
 	<title>Portal Administrador</title>
 
 	<link rel="stylesheet" href="view/resources/css/materialize.css">
-	<link rel="stylesheet" href="view/resources/css/estilos.css">
+	<link rel="stylesheet" href="view/resources/css/estilosTemplate.css">
 	<link rel="stylesheet" href="view/resources/css/material-icons.css">
 	
 </head>
@@ -19,10 +19,15 @@
 		include "sections/header.php";
     ?>
 	<br>
+	<main>
+		<?php
+	        $mvc = new MvcController();
+	        $mvc->rutasController();
+	    ?>
+	</main>
 
-	<?php
-        $mvc = new MvcController();
-        $mvc->rutasController();
+    <?php
+		include "sections/footer.php";
     ?>
 
 	<script type="text/javascript" src="view/resources/js/jquery-3.3.1.min.js"></script>

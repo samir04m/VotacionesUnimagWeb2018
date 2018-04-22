@@ -1,6 +1,10 @@
+<center>
+    <h4>Administrador de Usuarios</h4>
+</center>
+
 <div class="row">
 	
-	<div class="col m12">
+	<div class="col s12">
 		<table class="striped responsive-table highlight">
 			<thead>
 				<tr>
