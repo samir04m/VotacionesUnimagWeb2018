@@ -20,5 +20,23 @@ class RolDAO {
         return $roles;   
     }
 
+    public function buscarRol($table, $nameRow, $value){
+        $data_source = new DataSource();
+ 
+        $data_table= $data_source->ejecutarConsulta("SELECT * FROM $table WHERE $nameRow = :value", array(':value'=>$value));
+        
+        $rol=null;
+
+        if(count($data_table) == 1){
+            foreach($data_table as $indice => $valor){
+                $rol = new Rol(
+                    $data_table[$indice]["id"],
+                    $data_table[$indice]["rol"]
+                );
+            }
+        }
+        return $rol;
+    }
+
 
 }

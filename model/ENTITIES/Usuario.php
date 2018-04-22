@@ -95,5 +95,21 @@ class Usuario {
         return $array;
     }
 
+    public function getObjectRol(){
+    	require_once (__DIR__."/../DAO/RolDAO.php");
+
+    	$rol = RolDAO::buscarRol('rol', 'id', $this->rol_id);
+
+		return $rol;
+	}
+
+	public function getObjectPrograma(){
+    	require_once (__DIR__."/../DAO/ProgramaDAO.php");
+
+    	$programa = ProgramaDAO::buscarPrograma('programa', 'id', $this->programa_id);
+
+		return $programa;
+	}
+
 
 }

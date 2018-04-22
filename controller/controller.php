@@ -82,8 +82,8 @@ class MvcController{
 					<td>'.$respuesta[$indice]->getapellido1().'</td>
 					<td>'.$respuesta[$indice]->getapellido2().'</td>
 					<td>'.$respuesta[$indice]->getpassword().'</td>
-					<td>'.$respuesta[$indice]->getrol_id().'</td>
-					<td>'.$respuesta[$indice]->getprograma_id().'</td>
+					<td>'.$respuesta[$indice]->getObjectRol()->getrol().'</td>
+					<td>'.$respuesta[$indice]->getObjectPrograma()->getnombre().'</td>
 					<td>'.$respuesta[$indice]->getmesa_id().'</td>
 					<td><a href="index.php?action=editarUsuario&id='.$respuesta[$indice]->getcodigo().'" class="btn btn-floating"><i class="small material-icons">edit</i></a></td>
 					<td><a href="index.php?action=admin&idBorrar='.$respuesta[$indice]->getcodigo().'" class="btn red btn-floating btnDelete"><i class="small material-icons">delete_forever</i></a></td>	
@@ -218,7 +218,7 @@ class MvcController{
         	if ($ArrayRoles[$indice]->getid() == $user->getprograma_id()){
         			echo '<option value="'.$ArrayRoles[$indice]->getid().'" selected>'.$ArrayRoles[$indice]->getnombre().'</option>';
         	}else{
-           		echo '<option value="'.$ArrayRoles[$indice]->getid().'">Mesa '.$ArrayRoles[$indice]->getnombre().'</option>';
+           		echo '<option value="'.$ArrayRoles[$indice]->getid().'">'.$ArrayRoles[$indice]->getnombre().'</option>';
         	}
         }
 	}
