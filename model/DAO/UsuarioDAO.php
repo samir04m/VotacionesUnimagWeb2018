@@ -82,9 +82,9 @@ class UsuarioDAO {
         return $usuarios;   
     }
 
-    public function insertUsuario_UsuarioDAO(Usuario $usuario){
+    public function insertUsuario_UsuarioDAO(Usuario $usuario, $table){
         $data_source= new DataSource();
-        $sql = "INSERT INTO Usuario (codigo, nombre1, nombre2, apellido1, apellido2, password, rol_id, programa_id, mesa_id) VALUES (:codigo, :nombre1, :nombre2, :apellido1, :apellido2, :password, :rol_id, :programa_id, :mesa_id)";
+        $sql = "INSERT INTO $table (codigo, nombre1, nombre2, apellido1, apellido2, password, rol_id, programa_id, mesa_id) VALUES (:codigo, :nombre1, :nombre2, :apellido1, :apellido2, :password, :rol_id, :programa_id, :mesa_id)";
         
         $resultado = $data_source->ejecutarActualizacion($sql, array(
                 ':codigo'=>$usuario->getcodigo(),
@@ -129,11 +129,11 @@ class UsuarioDAO {
         return $resultado;
     }
     
-    public function deleteUsuario_UsuarioDAO($tabla, $nameRowId, $id){
+    public function deleteUsuario_UsuarioDAO($table, $nameRowId, $id){
         echo "<br>borrarUsuario en UsuarioDAO id=".$id;
         $data_source = new DataSource();
     
-        $resultado = $data_source->eliminar($tabla, $nameRowId, $id);
+        $resultado = $data_source->eliminar($table, $nameRowId, $id);
    
         return $resultado;
     }
