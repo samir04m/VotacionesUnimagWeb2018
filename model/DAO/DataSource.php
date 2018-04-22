@@ -11,7 +11,7 @@ class DataSource {
 
 			$config = fopen(__DIR__."/../../conf/config.json", "r");
 
-			if (!config){
+			if (!$config){
 				die("Error: No se puede abrir el archivo de configuracion!");
 			}
 			$content = "";

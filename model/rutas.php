@@ -1,7 +1,7 @@
 <?php
 	class Rutas{
 
-		public function enlacesPaginasModel($rutasModel){
+		public function rutasModel($rutasModel){
 
 			if ($rutasModel == "login"){
 				$module = "view/login.php";
@@ -16,7 +16,7 @@
 				$module = "view/usuario/formulario.php";
 			}
 			else if ($rutasModel == "cerrarSesion"){
-				$module = "controllers/SERVICES/serv_logout.php";
+				$module = "controller/SERVICES/serv_logout.php";
 			}
 			else{
 				$module = "view/noFound.php";

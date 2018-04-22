@@ -62,7 +62,7 @@ class UsuarioDAO {
 
     public function obtenerUsuarios($table){
         $data_source = new DataSource();
-        $data_table = $data_source->ejecutarConsulta("SELECT * FROM $table");
+        $data_table = $data_source->ejecutarConsulta("SELECT * FROM $table WHERE rol_id != 'A' ");
         $usuario=null;
         $usuarios=array();
         foreach($data_table as $indice=>$valor){

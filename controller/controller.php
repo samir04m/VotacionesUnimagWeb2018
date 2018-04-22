@@ -4,15 +4,16 @@ class MvcController{
 
 	public function pagina(){
 		 session_start();
-
+		 // session_destroy();
 		if(!isset($_SESSION["LOGIN"])){
 			echo "No has iniciado sesion";
 			header("location: view/login.php");
 			// include (__DIR__ ."/../view/usuario/login.php");
 			exit();
 		}else{
+				// header("location: index.php?action=admin");
 			if ($_SESSION["LOGIN"]){
-				header("location: view/template.php");
+				include (__DIR__ ."/../view/template.php");
 				// include (__DIR__ ."/../view/template.php");
 				// if ($_SESSION["ROL_USUARIO"] == 1){
 				// 	include (__DIR__ ."/../index.php");
@@ -71,7 +72,7 @@ class MvcController{
     public function tablaUsuariosController(){
 		require_once "MDB/mdbUsuario.php";
 
-		$respuesta = obtenerUsuarios();
+		$respuesta = obtenerUsuarios('usuario');
 
 		foreach ($respuesta as $indice => $valor) {
 			echo '<tr>

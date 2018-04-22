@@ -7,7 +7,14 @@
         $usuario = $dao->autenticarUsuario($table, $nameRowId, $id, $nameRowPassword, $password);
         return $usuario;
     }
-    
+
+    function obtenerUsuarios($table){
+        require_once(__DIR__."/../../model/DAO/UsuarioDAO.php");
+        $dao=new UsuarioDAO();
+        $usuario = $dao->obtenerUsuarios($table);
+        return $usuario;
+    }
+
     function buscarUsuario($table, $row, $value){
         require_once(__DIR__."/../../model/DAO/UsuarioDAO.php");
         $dao=new UsuarioDAO();
