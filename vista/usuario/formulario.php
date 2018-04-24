@@ -6,7 +6,7 @@
 	<div class="row">
 		<div class="col s12 offset-m1 m10 offset-l2 l8">
 			<div class="card-panel grey lighten-3 z-depth-3">
-	            <form method="post"  action="controller/SERVICES/serv_crearUsuario.php" role="form">
+	            <form method="post"  action="controlador/servicios/serv_crearUsuario.php" role="form">
 	            	<div class="row">
 		            	<div class="input-field col s12 m6">
 		            		<input type="number" name="codigo" id="codigo" required>

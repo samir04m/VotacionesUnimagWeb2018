@@ -1,4 +1,4 @@
-USE `db_votaciones`;
+USE `votacionesUnimag`;
 
 INSERT INTO `facultad`(`nombre`) VALUES
 ('Ingeniería'),('Ciencias de la Educación'),('Ciencias de la Salud'),
@@ -17,7 +17,7 @@ INSERT INTO `rol` (`id`,`rol`) VALUES
 
 INSERT INTO `usuario`(`codigo`, `nombre1`, `nombre2`, `apellido1`, `apellido2`, 
 `password`, `rol_id`, `mesa_id`, `programa_id`) VALUES
-('2018110100','Admin','Admin','Admin','Admin','admin','A',null,null),
-('2018110200','Admin2','Admin2','Admin2','Admin2','1234','A',null,null),
+('2018110100','Administrador','a','a','a','0000','A',null,null),
+('2018110200','2do Administrador','a','a','a','1234','A',null,null),
 ('2018112030','Juan','Jose','Lopez','Madera','2030','V',10,1),
 ('2018113040','Ernesto','Andres','Madrid','Sierra','3040','V',11,2);

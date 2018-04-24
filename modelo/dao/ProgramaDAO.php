@@ -1,7 +1,7 @@
 <?php
 
 require_once ("DataSource.php");
-require_once (__DIR__."/../ENTITIES/Programa.php");
+require_once (__DIR__."/../entidades/Programa.php");
 
 class ProgramaDAO {
 

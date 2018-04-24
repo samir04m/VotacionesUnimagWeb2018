@@ -24,7 +24,7 @@
 			<div class="row">
 				<div class="col s12 offset-m1 m10 offset-l3 l6">
 					<div class="card" id="card-login">
-						<form action="../controller/SERVICES/serv_loginUsuario.php" method="POST" role="form">
+						<form action="../controlador/servicios/serv_loginUsuario.php" method="POST" role="form">
 							<div class="card-content grey lighten-4">
 								<div class="center-align"><b>Inicio de sesión</b></div>
 								<hr><br>
@@ -36,7 +36,7 @@
 									<input type="password" name="password" id="password" required="required">
 									<label for="password">Contraseña</label>
 								</div>						
-								<a href="#!" id="recordarDatos">Ver usuarios de prueba</a>
+								
 							</div>
 							<div class="card-action center-align purple lighten-4">
 								<button type="submit" name='submit' value="Submit" class="btn btn-large waves-effect waves-light purple hoverable" id="btnLogin">Ingresar</button>
@@ -72,7 +72,7 @@
 	<script type="text/javascript">
 		$(function(){
 			$('#codigo').val("2018110100");	
-			$('#password').val("admin");	
+			$('#password').val("0000");	
 			var mensaje = '';
 			<?php 
 				// session_start();

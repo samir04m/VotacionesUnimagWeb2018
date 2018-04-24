@@ -8,9 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Portal Administrador</title>
 
-	<link rel="stylesheet" href="view/resources/css/materialize.css">
-	<link rel="stylesheet" href="view/resources/css/estilosTemplate.css">
-	<link rel="stylesheet" href="view/resources/css/material-icons.css">
+	<link rel="stylesheet" href="vista/resources/css/materialize.css">
+	<link rel="stylesheet" href="vista/resources/css/estilosTemplate.css">
+	<link rel="stylesheet" href="vista/resources/css/material-icons.css">
 	
 </head>
 <body>
@@ -30,9 +30,9 @@
 		include "sections/footer.php";
     ?>
 
-	<script type="text/javascript" src="view/resources/js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="view/resources/js/materialize.js"></script>
-	<script type="text/javascript" src="view/resources/js/scriptTemplate.js"></script>
+	<script type="text/javascript" src="vista/resources/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="vista/resources/js/materialize.js"></script>
+	<script type="text/javascript" src="vista/resources/js/scriptTemplate.js"></script>
 
 	
 </body>

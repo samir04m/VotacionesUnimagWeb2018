@@ -4,22 +4,17 @@ class MvcController{
 
 	public function pagina(){
 		 session_start();
-		 // session_destroy();
+
 		if(!isset($_SESSION["LOGIN"])){
 			echo "No has iniciado sesion";
-			header("location: view/login.php");
-			// include (__DIR__ ."/../view/usuario/login.php");
+			header("location: vista/login.php");
+
 			exit();
 		}else{
-				// header("location: index.php?action=admin");
+
 			if ($_SESSION["LOGIN"]){
-				include (__DIR__ ."/../view/template.php");
-				// include (__DIR__ ."/../view/template.php");
-				// if ($_SESSION["ROL_USUARIO"] == 1){
-				// 	include (__DIR__ ."/../index.php");
-				// }else{
-				// 	include (__DIR__ ."/../index.php");
-				// }
+				include (__DIR__ ."/../vista/template.php");
+
 			}
 		}
 	}
@@ -37,7 +32,7 @@ class MvcController{
 	}
 
 	public function selectRolController(){
-    	require_once(__DIR__."/../model/DAO/RolDAO.php");
+    	require_once(__DIR__."/../modelo/dao/RolDAO.php");
 
         $dao = new RolDAO();
         $ArrayRoles = $dao->obtenerRoles();
@@ -48,7 +43,7 @@ class MvcController{
     }
 
     public function selectProgramaController(){
-    	require_once(__DIR__."/../model/DAO/ProgramaDAO.php");
+    	require_once(__DIR__."/../modelo/dao/ProgramaDAO.php");
 
         $dao = new ProgramaDAO();
         $ArrayProgramas = $dao->obtenerProgramas();
@@ -59,7 +54,7 @@ class MvcController{
     }
 
     public function selectMesaController(){
-    	require_once(__DIR__."/../model/DAO/MesaDAO.php");
+    	require_once(__DIR__."/../modelo/dao/MesaDAO.php");
 
         $dao = new MesaDAO();
         $ArrayMesas = $dao->obtenerMesas();
@@ -70,7 +65,7 @@ class MvcController{
     }
 
     public function tablaUsuariosController(){
-		require_once "MDB/mdbUsuario.php";
+		require_once "mdb/mdbUsuario.php";
 
 		$respuesta = obtenerUsuarios('usuario');
 
@@ -94,7 +89,7 @@ class MvcController{
 
 	public function deleteUsuarioController(){
 	
-		require_once "MDB/mdbUsuario.php";
+		require_once "mdb/mdbUsuario.php";
 
 		if (isset($_GET["idBorrar"])){
 			$idBorrar = $_GET["idBorrar"];
@@ -117,8 +112,8 @@ class MvcController{
 	}
 
 	public function updateUsuarioController(){
-		require_once "MDB/mdbUsuario.php";
-		require_once (__DIR__."/../model/DAO/UsuarioDAO.php");
+		require_once "mdb/mdbUsuario.php";
+		require_once (__DIR__."/../modelo/dao/UsuarioDAO.php");
 
 		if (isset($_GET["id"])){
 			$codigo = $_GET["id"];
@@ -159,8 +154,8 @@ class MvcController{
 
 
 	public function obtenerUsuarioController(){
-		require_once "MDB/mdbUsuario.php";
-		require_once (__DIR__."/../model/DAO/UsuarioDAO.php");
+		require_once "mdb/mdbUsuario.php";
+		require_once (__DIR__."/../modelo/dao/UsuarioDAO.php");
 
 		if (isset($_GET["id"])){
 			$codigo = $_GET["id"];
@@ -174,7 +169,7 @@ class MvcController{
 
 	public function selectRolSeleccionado(){
 
-		require_once(__DIR__."/../model/DAO/RolDAO.php");
+		require_once(__DIR__."/../modelo/dao/RolDAO.php");
 
 		$user = $this->obtenerUsuarioController();
         $dao = new RolDAO();
@@ -191,7 +186,7 @@ class MvcController{
 
 	public function selectMesaSeleccionado(){
 
-		require_once(__DIR__."/../model/DAO/MesaDAO.php");
+		require_once(__DIR__."/../modelo/dao/MesaDAO.php");
 
 		$user = $this->obtenerUsuarioController();
         $dao = new MesaDAO();
@@ -208,7 +203,7 @@ class MvcController{
 
 	public function selectProgramaSeleccionado(){
 
-		require_once(__DIR__."/../model/DAO/ProgramaDAO.php");
+		require_once(__DIR__."/../modelo/dao/ProgramaDAO.php");
 
 		$user = $this->obtenerUsuarioController();
         $dao = new ProgramaDAO();

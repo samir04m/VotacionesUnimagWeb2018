@@ -1,7 +1,7 @@
 <?php
 
 require_once ("DataSource.php");
-require_once (__DIR__."/../ENTITIES/Mesa.php");
+require_once (__DIR__."/../entidades/Mesa.php");
 
 class MesaDAO {
 

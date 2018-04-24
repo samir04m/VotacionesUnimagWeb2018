@@ -86,17 +86,10 @@ class Usuario {
 		$this->mesa_id = $mesa_id;
 		return $this;
 	}
-	public function toArray() {
-        $vars = get_object_vars ( $this );
-        $array = array ();
-        foreach ( $vars as $key => $value ) {
-            $array [ltrim ( $key, '_' )] = $value;
-        }
-        return $array;
-    }
+
 
     public function getObjectRol(){
-    	require_once (__DIR__."/../DAO/RolDAO.php");
+    	require_once (__DIR__."/../dao/RolDAO.php");
 
     	$rol = RolDAO::buscarRol('rol', 'id', $this->rol_id);
 
@@ -104,7 +97,7 @@ class Usuario {
 	}
 
 	public function getObjectPrograma(){
-    	require_once (__DIR__."/../DAO/ProgramaDAO.php");
+    	require_once (__DIR__."/../dao/ProgramaDAO.php");
 
     	$programa = ProgramaDAO::buscarPrograma('programa', 'id', $this->programa_id);
 

@@ -1,7 +1,7 @@
 <?php
 
 require_once ("DataSource.php");
-require_once (__DIR__."/../ENTITIES/Rol.php");
+require_once (__DIR__."/../entidades/Rol.php");
 
 class RolDAO {
 

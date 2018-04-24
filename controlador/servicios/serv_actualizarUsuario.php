@@ -1,5 +1,5 @@
 <?php
-	require_once (__DIR__."/../MDB/mdbUsuario.php");
+	require_once (__DIR__."/../mdb/mdbUsuario.php");
           
 	if(isset($_POST['submit'])){
 		echo "<br>Se presiono boton sumit";
