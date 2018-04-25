@@ -38,5 +38,13 @@ class Programa {
 		return $this;
 	}
 
+	public function getObjectFacultad(){
+    	require_once (__DIR__."/../dao/FacultadDAO.php");
+
+    	$Facultad = FacultadDAO::buscarFacultad('facultad', 'id', $this->facultad_id);
+
+		return $Facultad;
+	}
+
 
 }

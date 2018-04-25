@@ -7,3 +7,18 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+#panel-navegacion {
+	padding: 5px 30px 5px 30px;
+	min-height: 39px;
+}
+#panel-navegacion  > .breadcrumb {
+	color: black;
+	font-size: 16px;
+}
+#panel-navegacion  > .breadcrumb:hover {
+	color: purple;
+}
+a.breadcrumb::before {
+	color: black;
+}

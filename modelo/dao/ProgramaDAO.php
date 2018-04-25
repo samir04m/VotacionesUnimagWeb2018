@@ -40,4 +40,43 @@ class ProgramaDAO {
         return $programa;
     }
 
+     public function insertPrograma_ProgramaDAO(Programa $objeto, $table){
+        $data_source= new DataSource();
+        $sql = "INSERT INTO $table (nombre, facultad_id) VALUES (:nombre, :facultad_id)";
+        
+        $resultado = $data_source->ejecutarActualizacion($sql, array(
+                ':nombre'=>$objeto->getnombre(),
+                ':facultad_id'=>$objeto->getfacultad_id()
+            )
+        );
+        
+        return $resultado;
+    }
+
+    public function updatePrograma_ProgramaDAO(Programa $objeto, $table){
+        $data_source= new DataSource();
+
+        $sql = "UPDATE $table SET nombre= :nombre, "
+                . " facultad_id= :facultad_id "
+                . " WHERE id= :id ";
+
+        $resultado = $data_source->ejecutarActualizacion($sql, array(
+                ':id'=>$objeto->getid(),
+                ':nombre'=>$objeto->getnombre(),
+                ':facultad_id'=>$objeto->getfacultad_id()
+            )
+        );
+        
+        return $resultado;
+    }
+    
+    public function deletePrograma_ProgramaDAO($table, $nameRowId, $id){
+        echo "<br>borrarPrograma en ProgramaDAO id=".$id;
+        $data_source = new DataSource();
+    
+        $resultado = $data_source->eliminar($table, $nameRowId, $id);
+   
+        return $resultado;
+    }
+
 }

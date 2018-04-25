@@ -80,7 +80,7 @@ class MvcController{
 					<td>'.$respuesta[$indice]->getObjectRol()->getrol().'</td>
 					<td>'.$respuesta[$indice]->getObjectPrograma()->getnombre().'</td>
 					<td>'.$respuesta[$indice]->getmesa_id().'</td>
-					<td><a href="index.php?action=editarUsuario&id='.$respuesta[$indice]->getcodigo().'" class="btn btn-floating"><i class="small material-icons">edit</i></a></td>
+					<td><a href="index.php?action=editar-usuario&id='.$respuesta[$indice]->getcodigo().'" class="btn btn-floating"><i class="small material-icons">edit</i></a></td>
 					<td><a href="index.php?action=admin&idBorrar='.$respuesta[$indice]->getcodigo().'" class="btn red btn-floating btnDelete"><i class="small material-icons">delete_forever</i></a></td>	
 				  </tr>';
 		}
@@ -167,6 +167,20 @@ class MvcController{
 		return null;
 	}
 
+	public function obtenerProgramaController(){
+		require_once "mdb/mdbPrograma.php";
+		require_once (__DIR__."/../modelo/dao/ProgramaDAO.php");
+
+		if (isset($_GET["id"])){
+			$id = $_GET["id"];
+
+			$dao = new ProgramaDAO();
+			$programa = buscarPrograma('programa', 'id', $id);
+			return $programa;
+		}
+		return null;
+	}
+
 	public function selectRolSeleccionado(){
 
 		require_once(__DIR__."/../modelo/dao/RolDAO.php");
@@ -218,6 +232,93 @@ class MvcController{
         }
 	}
 
+	public function selectFacultadController(){
+    	require_once(__DIR__."/../modelo/dao/FacultadDAO.php");
+
+        $dao = new FacultadDAO();
+        $ArrayFacultades = $dao->obtenerFacultades();
+
+        foreach ($ArrayFacultades as $indice => $valor) {
+           	echo '<option value="'.$ArrayFacultades[$indice]->getid().'">'.$ArrayFacultades[$indice]->getnombre().'</option>';
+        }
+    }
+
+    public function selectFacultadSeleccionado(){
+
+		require_once(__DIR__."/../modelo/dao/FacultadDAO.php");
+
+		$programa = $this->obtenerProgramaController();
+        $dao = new FacultadDAO();
+        $ArrayFacultades = $dao->obtenerFacultades();
+
+        foreach ($ArrayFacultades as $indice => $valor) {
+        	if ($ArrayFacultades[$indice]->getid() == $programa->getfacultad_id()){
+        			echo '<option value="'.$ArrayFacultades[$indice]->getid().'" selected>'.$ArrayFacultades[$indice]->getnombre().'</option>';
+        	}else{
+           		echo '<option value="'.$ArrayFacultades[$indice]->getid().'">'.$ArrayFacultades[$indice]->getnombre().'</option>';
+        	}
+        }
+	}
+
+    public function tablaProgramaController(){
+		require_once "mdb/mdbPrograma.php";
+
+		$respuesta = obtenerProgramas_mdbPrograma('programa');
+
+		foreach ($respuesta as $indice => $valor) {
+			echo '<tr>
+					<td>'.$respuesta[$indice]->getid().'</td>
+					<td>'.$respuesta[$indice]->getnombre().'</td>
+					<td>'.$respuesta[$indice]->getObjectFacultad()->getnombre().'</td>
+					<td><a href="index.php?action=editar-programa&id='.$respuesta[$indice]->getid().'" class="btn btn-floating"><i class="small material-icons">edit</i></a></td>
+					<td><a href="index.php?action=admin-programa&idBorrar='.$respuesta[$indice]->getid().'" class="btn red btn-floating btnDelete"><i class="small material-icons">delete_forever</i></a></td>	
+				  </tr>';
+		}
+	}
+
+
+	public function deleteProgramaController(){
+	
+		require_once "mdb/mdbPrograma.php";
+
+		if (isset($_GET["idBorrar"])){
+			$idBorrar = $_GET["idBorrar"];
+			
+			$dao = new ProgramaDAO();
+	        $respuesta= $dao->deletePrograma_ProgramaDAO('programa', 'id',$idBorrar);
+
+	        echo "<br>enController respuesta ".$respuesta;
+
+			if ($respuesta != 0){
+				header("location: index.php?action=admin-programa&seBorro=true");
+			
+			}else{
+				header("location: index.php?action=admin-programa&seBorro=false");
+			}
+
+		}
+	}
+
+	public function updateProgramaController(){
+		require_once "mdb/mdbPrograma.php";
+		require_once (__DIR__."/../modelo/dao/ProgramaDAO.php");
+
+		if (isset($_GET["id"])){
+			$id = $_GET["id"];
+
+			$dao = new ProgramaDAO();
+			$object = buscarPrograma('programa', 'id', $id);
+
+			echo '<h5 class="center">id del programa '.$object->getid().'</h5><br>
+					<input class="hide" type="number" name="id" id="id" value="'.$object->getid().'" required>
+	            	<div class="input-field col s12 m6">
+	            		<input type="text" name="nombre" id="nombre" value="'.$object->getnombre().'" required>
+	            		<label for="nombre">Primer Nombre</label>
+	            	</div>';
+
+		}
+
+	}
 
 
 }

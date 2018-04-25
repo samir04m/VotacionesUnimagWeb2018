@@ -52,3 +52,5 @@
         $resultado=$dao->deleteUsuario_UsuarioDAO($table, $row, $value);
         return $resultado;
     }     
+
+    
